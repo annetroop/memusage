@@ -9,7 +9,7 @@ shinyServer(
 
       listdf <- rep(NULL, 4)
       filename <- rep(NULL, 4)
-      for (i in c(1:4)) {
+      for (i in 1:4) {
         filename[i] <- paste(dir, "/machine",i,"_memusage.out", sep="");
         listdf[[i]] <- read.table(filename[i])
         listdf[[i]]$machine <- paste("machine",i,sep="");
