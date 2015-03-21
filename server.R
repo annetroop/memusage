@@ -34,7 +34,7 @@ shinyServer(
         
         mem <- transform(mem, machine = factor(machine))     
         mem_subset <- subset(mem, ( (mem$when > ymd(input$begin))  & ( mem$when <= ymd(input$end) )   )  )
-        g <- ggplot(mem, aes(when, V3) ) 
+        g <- ggplot(mem_subset, aes(when, V3) ) 
         g <- g + geom_point(aes(color = machine))
         g <- g + ylab("kb RAM used")
         g <- g + labs(title = "memory usage over time")
